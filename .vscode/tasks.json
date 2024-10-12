@@ -1,0 +1,179 @@
+{
+    "version": "2.0.0",
+
+    "tasks":
+    [
+        {
+            "label": "Build win64Debug",
+            "type": "shell",
+            "command": "C:/MinGW-w64/x86_64-13.1.0-release-posix-seh-ucrt-rt_v11-rev1/bin/g++.exe",
+
+            "args":
+            [
+                "${workspaceFolder}/code/*.cpp",
+
+                "-I${workspaceFolder}/code",
+
+                "-ID:/DevLibs/SDL2-2.24.1/x86_64-w64-mingw32/include/SDL2",
+                "-ID:/DevLibs/SDL2_image-2.8.2/x86_64-w64-mingw32/include/SDL2",
+
+                "-LD:/DevLibs/SDL2-2.24.1/x86_64-w64-mingw32/lib",
+                "-LD:/DevLibs/SDL2_image-2.8.2/x86_64-w64-mingw32/lib",
+
+                "-lmingw32",
+                "-lSDL2main",
+                "-lSDL2",
+                "-lSDL2_image",
+
+                "-o",
+                "${workspaceFolder}/../Builds/win64Debug/TopdownGame.exe",
+                "-fdiagnostics-color=always",
+                "-g",
+                "-Og",
+                "-std=c++20",
+                "-m64",
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
+                "-Weffc++",
+                "-Wfatal-errors"
+            ],
+
+            "options":
+            {
+                "cwd": "C:/MinGW-w64/x86_64-13.1.0-release-posix-seh-ucrt-rt_v11-rev1/bin"
+            },
+
+            "problemMatcher":
+            [
+                "$gcc"
+            ],
+
+            "group":
+            {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+
+        {
+            "label": "Build linux64Debug",
+            "type": "shell",
+            "command": "g++",
+
+            "args":
+            [
+                "${workspaceFolder}/code/*.cpp",
+
+                "-I${workspaceFolder}/code",
+                "-I/usr/include/SDL2",
+
+                "-lSDL2main",
+                "-lSDL2",
+                "-lSDL2_image",
+
+                "-o",
+                "${workspaceFolder}/../Builds/linux64Debug/TopdownGame",
+                "-fdiagnostics-color=always",
+                "-g",
+                "-Og",
+                "-fsanitize=undefined",
+                "-std=c++20",
+                "-m64",
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
+                "-Weffc++",
+                "-Wfatal-errors"
+            ],
+
+            "options":
+            {
+                "cwd": "/usr/bin"
+            },
+
+            "problemMatcher":
+            [
+                "$gcc"
+            ],
+
+            "group":
+            {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+
+        {
+            "label": "Build linux64Debug with BluegillBuilder",
+            "type": "shell",
+            "command": "/mnt/MyData/MyProjectsAndResources/Apps/ProjectBluegillBuilder/Builds/linux64Release/BluegillBuilder",
+
+            "args":
+            [
+                "--compilerInit",
+                    "g++",
+                    "${workspaceFolder}/../Builds/linux64Debug",
+                    "TopdownGame",
+                    "incremental",
+
+                "--tempDir",
+                    "${workspaceFolder}/../Builds/bgbTemp",
+
+                "--headerDir",
+                    "${workspaceFolder}/code",
+                    "allow",
+                    ".hpp",
+
+                "--sourceDir",
+                    "${workspaceFolder}/code",
+                    "allow",
+                    ".cpp",
+
+                "--compArgs",
+                    "-g",
+                    "-Og",
+                    "-std=c++20",
+                    "-fdiagnostics-color=always",
+                    "-fsanitize=undefined",
+                    "-Wall",
+                    "-Wextra",
+                    "-Wpedantic",
+                    "-Weffc++",
+                    "-Wfatal-errors",
+                    "-I/usr/include/SDL2",
+                
+                "--linkArgs",
+                    "-g",
+                    "-Og",
+                    "-std=c++20",
+                    "-fdiagnostics-color=always",
+                    "-fsanitize=undefined",
+                    "-Wall",
+                    "-Wextra",
+                    "-Wpedantic",
+                    "-Weffc++",
+                    "-Wfatal-errors",
+                    "-lSDL2main",
+                    "-lSDL2",
+                    "-lSDL2_image",
+            ],
+
+            "options":
+            {
+                "cwd": "/mnt/MyData/MyProjectsAndResources/Apps/ProjectBluegillBuilder/Builds/linux64Release"
+            },
+
+            "problemMatcher":
+            [
+                "$gcc"
+            ],
+
+            "group":
+            {
+                "kind": "build",
+                "isDefault": false
+            }
+        }
+    ]
+}

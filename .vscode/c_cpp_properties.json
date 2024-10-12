@@ -1,0 +1,45 @@
+{
+    "configurations":
+    [
+        {
+            "name": "win64Gcc",
+            "includePath":
+            [
+                "${workspaceFolder}/code/**",
+                "D:/DevLibs/SDL2-2.24.1/x86_64-w64-mingw32/include/SDL2/**",
+                "D:/DevLibs/SDL2_image-2.8.2/x86_64-w64-mingw32/include/SDL2/**"
+            ],
+            "defines":
+            [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "C:/MinGW-w64/x86_64-13.1.0-release-posix-seh-ucrt-rt_v11-rev1/bin/g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "windows-gcc-x64"
+        },
+
+        {
+            "name": "linux64Gcc",
+            "includePath":
+            [
+                "${workspaceFolder}/code/**",
+                "/usr/include/SDL2/**"
+            ],
+            "defines":
+            [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
