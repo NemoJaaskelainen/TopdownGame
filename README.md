@@ -1,11 +1,22 @@
-# TopdownGame
+TopdownGame
+===========
 
-A prototype for a top-down game with a tile-based world. Includes a custom pathfinding algorithm, which was the main focus when I started this project.
+A prototype for a top-down game with a tile-based world.
+
+Includes:
+- A movable entity which uses a custom pathfinding algorithm
+- An editable tile-based world
+- A fancy viewport which is separate from the window
 
 Made in C++20 with the SDL and SDL_image libraries.
 
-I put this project here to showcase my programming.
+Demonstration
+-------------
 
-I'll add some videos here and a downloadable executable soon.
+![](demonstrationAssets/01.gif)
 
-\- Nemo Jääskeläinen
+![](demonstrationAssets/02.gif)
+
+![](demonstrationAssets/03.gif)
+
+![](demonstrationAssets/04.gif)
