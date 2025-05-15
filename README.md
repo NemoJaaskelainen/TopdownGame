@@ -13,10 +13,20 @@ Made in C++20 with the SDL and SDL_image libraries.
 Demonstration
 -------------
 
+### World-editing and pathfinding
+
 ![](demonstrationAssets/01.gif)
+
+### Pathfinding
 
 ![](demonstrationAssets/02.gif)
 
+### Separated viewport which shows how only the necessary tiles are rendered
+
 ![](demonstrationAssets/03.gif)
+
+Note: The black bars are transparent for demonstration.
+
+### Ditto
 
 ![](demonstrationAssets/04.gif)
